@@ -1,14 +1,13 @@
-class Car {
-    constructor() {
-        this.brand = '';
-        this.model = '';
-        this.year = 0;
-    }
-}
+var Car = require('./Car');
+var CarService = require('./CarService');
 
-var car1 = new Car();
+var carService = new CarService('SuperCars', 'England');
 
+var car1 = new Car('ford', 'focus', 2015);
 
-var car2 = new Car();
+var car2 = new Car('ford', 'firesta', 2000);
 
-console.log('I am from class-ex.js');
+carService.addCar(car1);
+carService.addCar(car2);
+
+carService.displayAllCars();
